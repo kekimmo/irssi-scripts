@@ -54,7 +54,7 @@ sub format_uris {
         my $uri_re_quoted = quotemeta($uri);
         (my $uri_color_quoted = $uri) =~ s/\%/%%/g;
         my $replacement = sprintf("\cC3%s\cC", $uri_color_quoted);
-        $text =~ s/${uri_re_quoted}\b/$replacement/g;
+        $text =~ s/${uri_re_quoted}(?=\s|$)/$replacement/g;
       }
     }
   }
