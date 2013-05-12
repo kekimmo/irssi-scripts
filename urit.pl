@@ -76,11 +76,8 @@ sub sig_message_own_public {
 
 sub sig_print_text {
   my ($text_dest, $text, $stripped_text) = @_;
-  # Only act if message is not explicitly colored
-  unless ($text =~ m/\cC/) {
-    $text = format_uris($text);
-    Irssi::signal_continue($text_dest, $text, $stripped_text);
-  }
+  $text = format_uris($text);
+  Irssi::signal_continue($text_dest, $text, $stripped_text);
 }
 
 
