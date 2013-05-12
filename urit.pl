@@ -9,7 +9,7 @@ our %IRSSI = (
   authors     => 'Kimmo Kenttälä',
   contact     => 'kimmo@kenttala.fi',
   name        => 'Urit',
-  description => 'URI tracker',
+  description => 'URI tracker - Right now, all it does is color new URIs green',
   license     => 'Undecided',
 );
 
@@ -38,7 +38,8 @@ sub log_uris {
       $uri_hash{$uri} = { 'count' => 0, 'origins' => [] };
     }
     $uri_hash{$uri}{'count'} += 1;
-    push($uri_hash{$uri}{'origins'}, $origin);
+    # Origin information not used, don't bother keeping it
+    #push($uri_hash{$uri}{'origins'}, $origin);
   }
 }
 
