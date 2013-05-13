@@ -52,8 +52,7 @@ sub format_uris {
       my $count = $uri_hash{$uri}->{'count'};
       if ($count == 1) {
         my $uri_re_quoted = quotemeta($uri);
-        (my $uri_color_quoted = $uri) =~ s/\%/%%/g;
-        my $replacement = sprintf("\cC3%s\cC", $uri_color_quoted);
+        my $replacement = sprintf("\cC3%s\cC", $uri);
         $text =~ s/${uri_re_quoted}(?=\s|$)/$replacement/g;
       }
     }
